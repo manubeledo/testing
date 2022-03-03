@@ -12,7 +12,7 @@ describe('CRUD de productos', ()=>{
     it('/getAll should return a non empty array', async function (){
         let products
         try{
-            products =  await axios.get('http://localhost:5000/api/productos')
+            products =  await axios.get('http://localhost:8080/api/productos')
         }catch(err){
             console.log('error al realizar get', err)
         }
@@ -27,7 +27,7 @@ describe('CRUD de productos', ()=>{
             await axios(
             {
                 method: 'post',
-                url: 'http://localhost:5000/api/productos',
+                url: 'http://localhost:8080/api/productos',
                 data: {
                     id_producto: idTestingProduct,
                     name: 'Otro producto agregado',
@@ -55,7 +55,7 @@ describe('CRUD de productos', ()=>{
             await axios(
             {
                 method: 'put',
-                url: 'http://localhost:5000/api/updateproductos',
+                url: 'http://localhost:8080/api/updateproductos',
                 data: {
                     id: idTestingProduct,
                     name: 'producto MODIFICADO',
@@ -83,7 +83,7 @@ describe('CRUD de productos', ()=>{
             await axios(
             {
                 method: 'delete',
-                url: 'http://localhost:5000/api/deleteproductos',
+                url: 'http://localhost:8080/api/deleteproductos',
                 data: {
                     id: idTestingProduct,
                 }
@@ -103,7 +103,7 @@ describe('CRUD de productos', ()=>{
 async function countDB(){
     let products
     try{
-        products =  await axios.get('http://localhost:5000/api/productos')
+        products =  await axios.get('http://localhost:8080/api/productos')
     }catch(err){
         console.log('error al realizar get', err)
     }
@@ -116,7 +116,7 @@ async function getByIdDB(idTest){
         products =  await axios(
             {
                 method: 'get',
-                url: 'http://localhost:5000/api/producto/:id',
+                url: 'http://localhost:8080/api/producto/:id',
                 data: {
                     id: idTest,
                 }

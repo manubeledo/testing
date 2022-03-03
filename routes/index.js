@@ -3,11 +3,11 @@ const { Router } = require("express");
 const router = Router();
 const checkForAuth = require('../passport/local-auth')
 const { newuserEmail } = require('../services/sendEmail')
-const upload = require('../controllers MongoDb/middlewares/multer')
+const upload = require('../http/middlewares/multer')
 
-controllersProductos = require('../controllers MongoDb/controllers.productos')
-controllersCarritos = require('../controllers MongoDb/controllers.carritos')
-controllersAvatar = require('../controllers MongoDb/controllers.avatar')
+controllersProductos = require('../http/controllers.productos')
+controllersCarritos = require('../http/controllers.carritos')
+controllersAvatar = require('../http/controllers.avatar')
 
 function serverRouter(app){
     
